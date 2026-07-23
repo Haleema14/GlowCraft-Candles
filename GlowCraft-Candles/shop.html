@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlowCraft Candles - Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="logo">
+            <h1>GlowCraft Candles</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="cart.html" class="cart-link">Cart (<span id="cart-count">0</span>)</a>
+        </nav>
+    </header>
+
+    <!-- All Products -->
+    <section class="products-section">
+        <h2>All Candle Collections</h2>
+        <div class="product-grid">
+
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="images/Levander breze.png" alt="Lavender Breeze Candle">
+                <h3>Lavender Breeze</h3>
+                <p>Calming lavender fragrance to soothe your senses.</p>
+                <span class="price">Rs. 800</span>
+                <button class="buy-btn" onclick="addToCart('Lavender Breeze', 800, 'images/Levander breze.png')">Add to Cart</button>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="images/Sandalwood Forest.png" alt="Sandalwood Forest Candle">
+                <h3>Sandalwood Forest</h3>
+                <p>Woody and rich traditional fragrance.</p>
+                <span class="price">Rs. 750</span>
+                <button class="buy-btn" onclick="addToCart('Sandalwood Forest', 750, 'images/Sandalwood Forest.png')">Add to Cart</button>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="images/Warm Vanilla.png" alt="Warm Vanilla Candle">
+                <h3>Warm Vanilla</h3>
+                <p>Sweet and cozy vanilla scented candle.</p>
+                <span class="price">Rs. 700</span>
+                <button class="buy-btn" onclick="addToCart('Warm Vanilla', 700, 'images/Warm Vanilla.png')">Add to Cart</button>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="images/Vintage Rose.png" alt="Vintage Rose Candle">
+                <h3>Vintage Rose</h3>
+                <p>A soothing blend of fresh vintage roses and sweet undertones.</p>
+                <span class="price">Rs. 800</span>
+                <button class="buy-btn" onclick="addToCart('Vintage Rose', 800, 'images/Vintage Rose.png')">Add to Cart</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 GlowCraft Candles. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

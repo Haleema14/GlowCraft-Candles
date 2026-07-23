@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Glow Craft</title>
+</head>
+<body style="background-color: #faf8f5; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; margin: 0; padding: 0;">
+
+    <!-- Navigation Bar -->
+    <header style="background: white; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; border-radius: 0 0 10px 10px;">
+        <h1 style="color: #5c3d2e; margin: 0; font-family: 'Georgia', serif; font-size: 1.8rem;">Glow Craft</h1>
+        <nav>
+            <a href="index.html" style="margin-right: 20px; text-decoration: none; color: #8c6239; font-weight: bold;">Home</a>
+            <a href="shop.html" style="margin-right: 20px; text-decoration: none; color: #8c6239; font-weight: bold;">Shop</a>
+            <a href="cart.html" style="text-decoration: none; color: #8c6239; font-weight: bold;">Cart</a>
+        </nav>
+    </header>
+
+    <!-- Checkout Form Container -->
+    <div style="max-width: 600px; margin: 40px auto; padding: 30px; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); box-sizing: border-box;">
+        <h2 style="color: #5c3d2e; text-align: center; margin-bottom: 30px; font-family: 'Georgia', serif;">Delivery Details</h2>
+        
+        <!-- Form (Formspree k sath linked kiya hai order details email par mangwane k liye) -->
+        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" id="checkout-form">
+            
+            <!-- Customer Name -->
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #5c3d2e;">Full Name</label>
+                <input type="text" name="name" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; font-size: 1rem;">
+            </div>
+
+            <!-- Phone Number -->
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #5c3d2e;">Phone Number</label>
+                <input type="tel" name="phone" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; font-size: 1rem;">
+            </div>
+
+            <!-- Address -->
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #5c3d2e;">Shipping Address</label>
+                <textarea name="address" rows="3" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; font-size: 1rem; resize: none;"></textarea>
+            </div>
+
+            <!-- City -->
+            <div style="margin-bottom: 25px;">
+                <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #5c3d2e;">City</label>
+                <input type="text" name="city" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; font-size: 1rem;">
+            </div>
+
+            <!-- Hidden inputs to submit Cart Items and Total Price -->
+            <input type="hidden" name="Order Details" id="order-details-input">
+            <input type="hidden" name="Total Amount" id="total-amount-input">
+
+            <!-- Payment Method Information -->
+            <div style="background: #faf8f5; padding: 15px; border-left: 4px solid #8c6239; border-radius: 4px; margin-bottom: 30px;">
+                <p style="margin: 0; font-weight: bold; color: #5c3d2e;">Payment Method:</p>
+                <p style="margin: 5px 0 0 0; color: #666; font-size: 0.95rem;">Cash on Delivery (COD) - Pay when you receive your package.</p>
+            </div>
+
+            <!-- Place Order Button -->
+            <button type="submit" style="width: 100%; background-color: #8c6239; color: white; border: none; padding: 15px; border-radius: 8px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: background 0.2s;">
+                Place Order (Cash on Delivery)
+            </button>
+        </form>
+    </div>
+
+    <!-- JS script to attach cart details inside form before sending -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedCart = JSON.parse(localStorage.getItem('cart')) || [];
+            let total = 0;
+            let orderText = "";
+
+            savedCart.forEach(item => {
+                const qty = item.quantity || 1;
+                const itemTotal = item.price * qty;
+                total += itemTotal;
+                orderText += `${item.name} (Qty: ${qty}) - Rs. ${itemTotal}\n`;
+            });
+
+            // Set hidden input values
+            document.getElementById('order-details-input').value = orderText;
+            document.getElementById('total-amount-input').value = "Rs. " + total;
+
+            // Form submit hone par local storage clean karna
+            document.getElementById('checkout-form').addEventListener('submit', () => {
+                localStorage.clear(); // Clear cart once order is placed
+            });
+        });
+    </script>
+</body>
+</html>
