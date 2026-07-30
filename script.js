@@ -31,7 +31,7 @@ function renderCart() {
     let total = 0;
 
     if (cart.length === 0) {
-        cartItemsContainer.innerHTML = "<p>Aap ki cart khali hai.</p>";
+        cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
         if (cartTotalElement) cartTotalElement.innerText = "0";
         return;
     }
