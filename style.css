@@ -376,3 +376,58 @@ footer{
         font-size:18px;
     }
 }
+/* ==========================================
+   WHY CHOOSE US
+========================================== */
+
+.why-choose-us {
+    text-align: center;
+    padding: 80px 10%;
+    background-color: #f4ece1;
+}
+
+.why-choose-us h2 {
+    font-size: 42px;
+    color: #4a3728;
+    margin-bottom: 40px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 35px 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.feature-card i {
+    font-size: 40px;
+    color: #d4a373;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 20px;
+    color: #4a3728;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+}
