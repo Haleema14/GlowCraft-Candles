@@ -410,9 +410,8 @@ footer{
 }
 
 .feature-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-}
+    transform: transl
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.
 
 .feature-card i {
     font-size: 40px;
