@@ -3,33 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart - Glow Craft</title>
+    <title>Shopping Cart - GlowCraft Candles</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="navbar">
-    <div class="logo">Glow Craft</div>
-    <nav>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
-        </ul>
-    </nav>
-</header>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="logo">
+            <h1>GlowCraft Candles</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="cart.html" class="cart-link">Cart (<span id="cart-count">0</span>)</a>
+        </nav>
+    </header>
 
-<h1 style="text-align:center; margin-top:40px;">Shopping Cart</h1>
+    <!-- Cart Main Content -->
+    <section class="cart-section">
+        <h2>Shopping Cart</h2>
+        <div id="cart-items" class="cart-items-container">
+            <!-- Dynamic Cart Items Will Load Here -->
+        </div>
+        
+        <div class="cart-summary">
+            <h3>Total: Rs. <span id="cart-total">0</span></h3>
+            <a href="checkout.html" class="btn checkout-btn">Proceed to Checkout</a>
+        </div>
+    </section>
 
-<div id="cart-items" style="width:80%; margin:40px auto;"></div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 GlowCraft Candles. All rights reserved.</p>
+    </footer>
 
-<div style="width:80%; margin:20px auto; text-align:right;">
-    <h3>Total: Rs. <span id="cart-total">0</span></h3>
-    <button onclick="proceedToCheckout()" style="background:#5c3d2e; color:white; padding:12px 25px; border:none; font-size:16px; cursor:pointer; margin-top:10px; border-radius:5px;">Proceed to Checkout</button>
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
