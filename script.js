@@ -1,4 +1,4 @@
-// LocalStorage سے کارٹ لوڈ کریں
+// LocalStorage se cart load karein
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 function updateCartCount() {
@@ -24,6 +24,7 @@ function addToCart(name, price, image) {
 function renderCart() {
     const cartItemsContainer = document.getElementById('cart-items');
     const cartTotalElement = document.getElementById('cart-total');
+    const cartTotalFinalElement = document.getElementById('cart-total-final');
     
     if (!cartItemsContainer) return;
 
@@ -31,8 +32,9 @@ function renderCart() {
     let total = 0;
 
     if (cart.length === 0) {
-        cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
+        cartItemsContainer.innerHTML = "<p class='empty-cart-msg'>Your cart is currently empty.</p>";
         if (cartTotalElement) cartTotalElement.innerText = "0";
+        if (cartTotalFinalElement) cartTotalFinalElement.innerText = "0";
         return;
     }
 
@@ -40,21 +42,23 @@ function renderCart() {
         total += item.price * item.quantity;
         cartItemsContainer.innerHTML += `
             <div class="cart-item" style="display:flex; align-items:center; justify-content:space-between; margin-bottom:15px; border-bottom:1px solid #ddd; padding-bottom:10px;">
-                <img src="${item.image}" width="60" height="60" style="object-fit:cover; border-radius:5px;">
+                <img src="${item.image}" width="60" height="60" style="object-fit:cover; border-radius:5px;" alt="${item.name}">
                 <h4>${item.name}</h4>
                 <p>Rs. ${item.price}</p>
-                <div>
-                    <button onclick="changeQuantity(${index}, -1)">-</button>
-                    <span style="margin: 0 10px;">${item.quantity}</span>
-                    <button onclick="changeQuantity(${index}, 1)">+</button>
+                <div style="display:flex; align-items:center; gap:8px;">
+                    <button onclick="changeQuantity(${index}, -1)" style="padding:2px 8px; cursor:pointer;">-</button>
+                    <span>${item.quantity}</span>
+                    <button onclick="changeQuantity(${index}, 1)" style="padding:2px 8px; cursor:pointer;">+</button>
                 </div>
                 <p>Subtotal: Rs. ${item.price * item.quantity}</p>
-                <button onclick="removeItem(${index})" style="background:red; color:white; border:none; padding:5px 10px; cursor:pointer;">Remove</button>
+                <button onclick="removeItem(${index})" style="background:#ff4d4d; color:white; border:none; padding:5px 10px; cursor:pointer; border-radius:3px;">Remove</button>
             </div>
         `;
     });
 
+    // Subtotal aur Final Total dono ko update kar diya hai
     if (cartTotalElement) cartTotalElement.innerText = total;
+    if (cartTotalFinalElement) cartTotalFinalElement.innerText = total;
 }
 
 function changeQuantity(index, change) {
@@ -74,7 +78,7 @@ function removeItem(index) {
     updateCartCount();
 }
 
-// Checkout button ka action
+// Checkout button action
 function proceedToCheckout() {
     if (cart.length === 0) {
         alert("Aap ki cart khali hai!");

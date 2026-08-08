@@ -3,78 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | GlowCraft Candles</title>
+    <title>Contact Us | Golden Hour Candles</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
     <!-- Header -->
     <header>
         <div class="logo">
-            <h1>GlowCraft Candles</h1>
+            <h1>Golden Hour Candles</h1>
         </div>
 
         <nav>
             <a href="index.html">Home</a>
             <a href="shop.html">Shop</a>
             <a href="about.html">About Us</a>
-            <a href="contact.html">Contact Us</a>
+            <a href="contact.html" class="active">Contact Us</a>
             <a href="cart.html">Cart</a>
         </nav>
     </header>
 
     <!-- Contact Section -->
-    <section class="contact">
+    <main>
+        <section class="contact">
+            <div class="contact-content">
+                <h2>Get In Touch</h2>
 
-        <div class="contact-content">
+                <p>
+                    We'd love to hear from you! If you have any questions,
+                    suggestions, or would like to place a custom order, feel free
+                    to contact us using the details below or send us a message.
+                </p>
 
-            <h2>Get In Touch</h2>
+                <div class="contact-info">
+                    <p><strong>📍 Address:</strong> Multan, Punjab, Pakistan</p>
+                    <p><strong>📞 Phone:</strong> +92 304 0000001</p>
+                    <p><strong>📧 Email:</strong> info@goldenhourcandles.com</p>
+                </div>
 
-            <p>
-                We'd love to hear from you! If you have any questions,
-                suggestions, or would like to place an order, feel free
-                to contact us using the details below or send us a message.
-            </p>
+                <!-- WhatsApp Direct Button -->
+                <a href="https://wa.me/923040000001" target="_blank" class="whatsapp-btn">
+                    <i class="fa-brands fa-whatsapp"></i> Chat with us on WhatsApp
+                </a>
 
-            <div class="contact-info">
-                <p><strong>📍 Address:</strong> Multan, Punjab, Pakistan</p>
-                <p><strong>📞 Phone:</strong> +92 304 7216608</p>
-                <p><strong>📧 Email:</strong> info@glowcraftcandles.com</p>
+                <br><br>
+
+                <!-- Contact Form (Formspree endpoint) -->
+                <form action="https://formspree.io/f/xaqrqwel" method="POST" class="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Write your message..." rows="6" required></textarea>
+
+                    <button type="submit" class="btn">
+                        Send Message
+                    </button>
+                </form>
             </div>
-
-            <!-- WhatsApp Button -->
-            <a href="https://wa.me/923047216608" target="_blank" class="whatsapp-btn">
-                💬 Chat with us on WhatsApp
-            </a>
-
-            <br><br>
-
-            <!-- Contact Form -->
-            <form class="contact-form">
-
-                <input type="text" placeholder="Your Name" required>
-
-                <input type="email" placeholder="Your Email" required>
-
-                <textarea placeholder="Write your message..." rows="6" required></textarea>
-
-                <button type="submit" class="btn">
-                    Send Message
-                </button>
-
-            </form>
-
-        </div>
-
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 GlowCraft Candles. All Rights Reserved.</p>
+        <p>&copy; 2026 Golden Hour Candles. All Rights Reserved.</p>
     </footer>
-    <a href="https://wa.me/923047216608" target="_blank" class="floating-whatsapp">
-    💬
-</a>
 
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/923047216608" target="_blank" class="floating-whatsapp" aria-label="Contact us on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
 </body>
 </html>

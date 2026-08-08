@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GlowCraft Candles - Home</title>
+    <title>Golden Hour Candles - Home</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
     <!-- Header -->
     <header>
         <div class="logo">
-            <h1>GlowCraft Candles</h1>
+            <h1>Golden Hour Candles</h1>
         </div>
 
         <nav>
-            <a href="index.html">Home</a>
+            <a href="index.html" class="active">Home</a>
             <a href="shop.html">Shop</a>
             <a href="about.html">About Us</a>
             <a href="contact.html">Contact Us</a>
@@ -23,79 +26,78 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h2>Light Up Every Moment</h2>
-        <p>Discover our handmade scented candles crafted with love.</p>
-        <a href="shop.html" class="btn">Shop Now</a>
-    </section>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h2>Light Up Every Moment</h2>
+            <p>Discover our handmade scented candles crafted with love.</p>
+            <a href="shop.html" class="btn">Shop Now</a>
+        </section>
 
-    <!-- Featured Products -->
-    <section class="products-section">
+        <!-- Featured Products -->
+        <section class="products-section">
+            <h2>Featured Candles</h2>
 
-        <h2>Featured Candles</h2>
+            <div class="product-grid">
 
-        <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <img src="images/Levander breze.png" alt="Lavender Breeze">
+                    <h3>Lavender Breeze</h3>
+                    <p>Relaxing lavender fragrance for peaceful evenings.</p>
+                    <span class="price">Rs. 800</span>
+                    <button class="buy-btn" onclick="addToCart('Lavender Breeze', 800, 'images/Levander breze.png')">
+                        Add to Cart
+                    </button>
+                </div>
 
-            <!-- Product 1 -->
-            <div class="product-card">
-                <img src="images/Levander breze.png" alt="Lavender Breeze">
-                <h3>Lavender Breeze</h3>
-                <p>Relaxing lavender fragrance for peaceful evenings.</p>
-                <span class="price">Rs. 800</span>
-                <button class="buy-btn"
-                onclick="addToCart('Lavender Breeze',800,'images/Levander breze.png')">
-                Add to Cart
-                </button>
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <img src="images/Sandalwood Forest.png" alt="Sandalwood Forest">
+                    <h3>Sandalwood Forest</h3>
+                    <p>Rich woody aroma with a luxurious touch.</p>
+                    <span class="price">Rs. 750</span>
+                    <button class="buy-btn" onclick="addToCart('Sandalwood Forest', 750, 'images/Sandalwood Forest.png')">
+                        Add to Cart
+                    </button>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <img src="images/Warm Vanilla.png" alt="Warm Vanilla">
+                    <h3>Warm Vanilla</h3>
+                    <p>Sweet vanilla scent to make every room cozy.</p>
+                    <span class="price">Rs. 700</span>
+                    <button class="buy-btn" onclick="addToCart('Warm Vanilla', 700, 'images/Warm Vanilla.png')">
+                        Add to Cart
+                    </button>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <img src="images/Vintage Rose.png" alt="Vintage Rose">
+                    <h3>Vintage Rose</h3>
+                    <p>Fresh rose fragrance with a soft romantic feel.</p>
+                    <span class="price">Rs. 950</span>
+                    <button class="buy-btn" onclick="addToCart('Vintage Rose', 950, 'images/Vintage Rose.png')">
+                        Add to Cart
+                    </button>
+                </div>
+
             </div>
+        </section>
+    </main>
 
-            <!-- Product 2 -->
-            <div class="product-card">
-                <img src="images/Sandalwood Forest.png" alt="Sandalwood Forest">
-                <h3>Sandalwood Forest</h3>
-                <p>Rich woody aroma with a luxurious touch.</p>
-                <span class="price">Rs. 750</span>
-                <button class="buy-btn"
-                onclick="addToCart('Sandalwood Forest',750,'images/Sandalwood Forest.png')">
-                Add to Cart
-                </button>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product-card">
-                <img src="images/Warm Vanilla.png" alt="Warm Vanilla">
-                <h3>Warm Vanilla</h3>
-                <p>Sweet vanilla scent to make every room cozy.</p>
-                <span class="price">Rs. 700</span>
-                <button class="buy-btn"
-                onclick="addToCart('Warm Vanilla',700,'images/Warm Vanilla.png')">
-                Add to Cart
-                </button>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="product-card">
-                <img src="images/Vintage Rose.png" alt="Vintage Rose">
-                <h3>Vintage Rose</h3>
-                <p>Fresh rose fragrance with a soft romantic feel.</p>
-                <span class="price">Rs. 950</span>
-                <button class="buy-btn"
-                onclick="addToCart('Vintage Rose',950,'images/Vintage Rose.png')">
-                Add to Cart
-                </button>
-            </div>
-
-        </div>
-
-    </section>
-        <!-- Footer -->
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 GlowCraft Candles. All Rights Reserved.</p>
+        <p>&copy; 2026 Golden Hour Candles. All Rights Reserved.</p>
     </footer>
 
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/923047216608" target="_blank" class="floating-whatsapp" aria-label="Contact us on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
     <script src="script.js"></script>
-<a href="https://wa.me/923047216608" target="_blank" class="floating-whatsapp">
-    💬
-</a>
 </body>
 </html>

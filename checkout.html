@@ -3,16 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout - Glow Craft</title>
+    <title>Checkout | Golden Hour Candles</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body style="background-color: #faf8f5; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; margin: 0; padding: 0;">
 
     <!-- Navigation Bar -->
     <header style="background: white; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; border-radius: 0 0 10px 10px;">
-        <h1 style="color: #5c3d2e; margin: 0; font-family: 'Georgia', serif; font-size: 1.8rem;">Glow Craft</h1>
+        <h1 style="color: #5c3d2e; margin: 0; font-family: 'Georgia', serif; font-size: 1.8rem;">Golden Hour Candles</h1>
         <nav>
             <a href="index.html" style="margin-right: 20px; text-decoration: none; color: #8c6239; font-weight: bold;">Home</a>
             <a href="shop.html" style="margin-right: 20px; text-decoration: none; color: #8c6239; font-weight: bold;">Shop</a>
+            <a href="about.html" style="margin-right: 20px; text-decoration: none; color: #8c6239; font-weight: bold;">About Us</a>
+            <a href="contact.html" style="margin-right: 20px; text-decoration: none; color: #8c6239; font-weight: bold;">Contact Us</a>
             <a href="cart.html" style="text-decoration: none; color: #8c6239; font-weight: bold;">Cart</a>
         </nav>
     </header>
@@ -21,7 +28,7 @@
     <div style="max-width: 600px; margin: 40px auto; padding: 30px; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); box-sizing: border-box;">
         <h2 style="color: #5c3d2e; text-align: center; margin-bottom: 30px; font-family: 'Georgia', serif;">Delivery Details</h2>
         
-        <!-- Form (Formspree k sath linked kiya hai order details email par mangwane k liye) -->
+        <!-- Formspree Link -->
         <form action="https://formspree.io/f/xaqrqwel" method="POST" id="checkout-form">
             
             <!-- Customer Name -->
@@ -65,6 +72,11 @@
         </form>
     </div>
 
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/923047216608" target="_blank" class="floating-whatsapp" aria-label="Contact us on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
     <!-- JS script to attach cart details inside form before sending -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -83,9 +95,9 @@
             document.getElementById('order-details-input').value = orderText;
             document.getElementById('total-amount-input').value = "Rs. " + total;
 
-            // Form submit hone par local storage clean karna
+            // Form submit hone par sirf cart clear karna
             document.getElementById('checkout-form').addEventListener('submit', () => {
-                localStorage.clear(); // Clear cart once order is placed
+                localStorage.removeItem('cart');
             });
         });
     </script>

@@ -3,33 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart - Glow Craft</title>
+    <title>Shopping Cart | Golden Hour Candles</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body>
 
-<header class="navbar">
-    <div class="logo">Glow Craft</div>
+<header>
+    <div class="logo">
+        <h1>Golden Hour Candles</h1>
+    </div>
+
     <nav>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
-        </ul>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="cart.html" class="active">Cart</a>
     </nav>
 </header>
 
-<h1 style="text-align:center; margin-top:40px;">Shopping Cart</h1>
+<main class="cart-container">
+    <section class="cart-header">
+        <h1>Your Shopping Cart</h1>
+    </section>
 
-<div id="cart-items" style="width:80%; margin:40px auto;"></div>
+    <section class="cart-content">
+        <!-- Cart Items Table/List -->
+        <div class="cart-items" id="cart-items">
+            <!-- JavaScript se cart products yahan render hongay -->
+            <p class="empty-cart-msg">Your cart is currently empty.</p>
+        </div>
 
-<div style="width:80%; margin:20px auto; text-align:right;">
-    <h3>Total: Rs. <span id="cart-total">0</span></h3>
-    <button onclick="proceedToCheckout()" style="background:#5c3d2e; color:white; padding:12px 25px; border:none; font-size:16px; cursor:pointer; margin-top:10px; border-radius:5px;">Proceed to Checkout</button>
-</div>
+        <!-- Cart Summary / Total -->
+        <div class="cart-summary">
+            <h2>Order Summary</h2>
+            <div class="summary-details">
+                <div class="summary-line">
+                    <span>Subtotal:</span>
+                    <span>Rs. <span id="cart-total">0</span></span>
+                </div>
+                <div class="summary-line">
+                    <span>Shipping:</span>
+                    <span>Calculated at checkout</span>
+                </div>
+                <hr>
+                <div class="summary-line total">
+                    <strong>Total:</strong>
+                    <strong>Rs. <span id="cart-total-final">0</span></strong>
+                </div>
+            </div>
 
-<script src="script.js?v=2"></script>
+            <div class="cart-actions">
+                <a href="shop.html" class="btn-secondary">Continue Shopping</a>
+                <button class="btn-primary" id="checkout-btn" onclick="proceedToCheckout()">Proceed to Checkout</button>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 Golden Hour Candles. All Rights Reserved.</p>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/923047216608" target="_blank" class="floating-whatsapp" aria-label="Contact us on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- Cart Functionality Script -->
+<script src="script.js"></script>
+
 </body>
 </html>
