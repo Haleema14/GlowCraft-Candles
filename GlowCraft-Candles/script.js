@@ -1,4 +1,4 @@
-/// LocalStorage Cart Logic
+// LocalStorage Cart Logic
 function getCart() {
     return JSON.parse(localStorage.getItem('glowcart')) || [];
 }
@@ -17,9 +17,11 @@ function updateCartCount() {
 
 function addToCart(name, price, image) {
     let cart = getCart();
+
     let item = cart.find(p => p.name === name);
     if (item) {
         item.quantity += 1;
+        item.image = image; // Path update karein
     } else {
         cart.push({ name, price, image, quantity: 1 });
     }
@@ -42,11 +44,15 @@ function displayCart() {
         return;
     }
 
+    // SVG Placeholder fallback
+    const fallbackImage = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' fill='%23eee'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23aaa' font-size='10'%3ENo Image%3C/text%3E%3C/svg%3E";
+
     cart.forEach((item, index) => {
         total += item.price * item.quantity;
+
         cartItemsContainer.innerHTML += `
             <div class="cart-item">
-                <img src="${item.image}" alt="${item.name}" width="60">
+                <img src="${item.image}" alt="${item.name}" width="60" onerror="this.onerror=null; this.src='${fallbackImage}';">
                 <div class="cart-item-details">
                     <h4>${item.name}</h4>
                     <p>Rs. ${item.price} x ${item.quantity}</p>
