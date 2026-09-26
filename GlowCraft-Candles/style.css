@@ -1,4 +1,4 @@
-/* Reset & General Styles */
+/* --- Global Styles --- */
 * {
     margin: 0;
     padding: 0;
@@ -7,145 +7,157 @@
 }
 
 body {
-    background-color: #fdfbf7;
+    background-color: #f9f6f0;
     color: #333;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
-/* Main Content Wrapper (Optional: agar aapne main content ko wrap kiya hai) */
-main {
-    flex: 1;
-}
-
-/* Header & Nav */
+/* --- Header & Navigation --- */
 header {
-    background-color: #4a3728;
-    color: #fff;
-    padding: 1rem 2rem;
+    background-color: #4a2e18;
+    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 15px 50px;
 }
 
 header .logo h1 {
-    font-size: 1.5rem;
+    font-size: 24px;
+    letter-spacing: 1px;
 }
 
-nav a {
-    color: #fff;
+header nav a {
+    color: white;
     text-decoration: none;
-    margin-left: 1.5rem;
-    font-weight: 500;
+    margin-left: 20px;
+    font-size: 16px;
+    transition: color 0.3s ease;
 }
 
-nav a:hover {
-    color: #d4a373;
+header nav a:hover {
+    color: #f3d5b5;
 }
 
-/* Hero Section */
+/* --- 1. Hero / Banner Section Fix --- */
 .hero {
-    background-color: #f4ece1;
+    /* Agar aapke paas banner image hai toh 'images/banner.jpg' ki jagah apni image ka naam likh dein */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 4rem 1rem;
+    color: white;
+    padding: 0 20px;
 }
 
-.hero h2 {
-    font-size: 2.5rem;
-    color: #4a3728;
-    margin-bottom: 1rem;
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
 }
 
 .hero p {
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
-.btn {
-    display: inline-block;
-    background-color: #6e5a4f;
+.hero .shop-btn, .shop-now-btn {
+    background-color: #7b4b2a;
     color: white;
-    padding: 0.7rem 1.5rem;
+    padding: 10px 25px;
     text-decoration: none;
     border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
 }
 
-/* Product Section Grid */
-.products-section {
-    padding: 3rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+.hero .shop-btn:hover {
+    background-color: #5a351d;
 }
 
-.products-section h2 {
+/* --- Sections General --- */
+section {
+    padding: 40px 50px;
+}
+
+h2 {
     text-align: center;
-    margin-bottom: 2rem;
-    color: #4a3728;
+    margin-bottom: 30px;
+    color: #4a2e18;
 }
 
+/* --- Product Cards & 2. Image Ratio Fix (Laptop View) --- */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
 }
 
 .product-card {
-    background: #fff;
-    border: 1px solid #e2d7cd;
+    background: white;
     border-radius: 8px;
-    padding: 1rem;
+    padding: 15px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
 }
 
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Yahan laptop par pictures theek size aur landscape view mein aane ke liye height aur object-fit set kiya gaya hai */
 .product-card img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
+    height: 220px; 
+    object-fit: cover; 
+    border-radius: 6px;
+    margin-bottom: 15px;
 }
 
 .product-card h3 {
-    margin: 0.8rem 0 0.4rem;
-    color: #4a3728;
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #4a2e18;
 }
 
 .product-card p {
-    font-size: 0.9rem;
+    font-size: 14px;
     color: #666;
-    margin-bottom: 0.8rem;
+    margin-bottom: 10px;
 }
 
 .product-card .price {
-    display: block;
+    font-size: 16px;
     font-weight: bold;
-    font-size: 1.1rem;
-    color: #2b2b2b;
-    margin-bottom: 0.8rem;
+    color: #7b4b2a;
+    display: block;
+    margin-bottom: 12px;
 }
 
 .buy-btn {
-    background-color: #6e5a4f;
+    background-color: #4a2e18;
     color: white;
     border: none;
-    padding: 0.6rem 1.2rem;
-    cursor: pointer;
+    padding: 8px 15px;
     border-radius: 4px;
-    width: 100%;
-    font-size: 0.95rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
 }
 
-.buy-btn:hover {
-    background-color: #4a3728;
+.buy-button:hover {
+    background-color: #2c1a0e;
 }
 
-/* Footer */
+/* --- Footer --- */
 footer {
-    background-color: #4a3728;
-    color: #fff;
+    background-color: #4a2e18;
+    color: white;
     text-align: center;
-    padding: 1rem;
-    margin-top: auto;
+    padding: 20px 0;
+    margin-top: 40px;
 }
