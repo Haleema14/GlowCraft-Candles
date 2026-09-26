@@ -108,7 +108,6 @@ h2 {
     transform: translateY(-5px);
 }
 
-/* Yahan laptop par pictures theek size aur landscape view mein aane ke liye height aur object-fit set kiya gaya hai */
 .product-card img {
     width: 100%;
     height: 220px; 
