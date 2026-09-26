@@ -1,10 +1,10 @@
 // LocalStorage Cart Logic
 function getCart() {
-    return JSON.parse(localStorage.getItem('glowcart')) || [];
+    return JSON.parse(localStorage.getItem('cart')) || [];
 }
 
 function saveCart(cart) {
-    localStorage.setItem('glowcart', JSON.stringify(cart));
+    localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
 }
 
@@ -21,7 +21,7 @@ function addToCart(name, price, image) {
     let item = cart.find(p => p.name === name);
     if (item) {
         item.quantity += 1;
-        item.image = image; // Path update karein
+        item.image = image;
     } else {
         cart.push({ name, price, image, quantity: 1 });
     }
@@ -44,7 +44,6 @@ function displayCart() {
         return;
     }
 
-    // SVG Placeholder fallback
     const fallbackImage = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' fill='%23eee'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23aaa' font-size='10'%3ENo Image%3C/text%3E%3C/svg%3E";
 
     cart.forEach((item, index) => {
